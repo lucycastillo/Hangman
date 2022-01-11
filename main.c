@@ -22,10 +22,8 @@ all material that I have used, whether directly quoted or paraphrased.
     void displayXs(char exes[MAX], int totalDigits);
     int countXs (char exes [MAX], int totalDigits);
 
-int main(){
-}
-
-
+int main()
+{
     void readInput(char str[MAX])           //Function definition
     {
     fgets(str, MAX, stdin);
@@ -38,11 +36,9 @@ int main(){
 
     for(int i =0; i < strlen(str); ++i)
         {
-
         if ((str[i] >= 97) && (str[i] <= 122))        //checks if input string contains lowercase letters using ASCII table values
             {
         lowerCase++;
-
             }
 
         else if((str[i] >= 65) && (str[i] <= 90))   //checks if input string contains upercase letters using ASCII table values
@@ -58,18 +54,12 @@ int main(){
         else if ((str[i] == ',') || (str[i] == ' '))         //checks if input string contains special chars
             {
         specialChars++;
-
             }
     }
-
-
-
     *countUpperCase = upperCase;
     *countLowerCase = lowerCase;
     *countSpecialChars = specialChars;
     *countNumbers = numbers;
-
-
     }
 
 
@@ -80,7 +70,6 @@ int main(){
 
         for (int i = 0; i < strlen(str); ++i)     //loop through str for length of str
             {
-
           if((str[i] >= 48) && (str[i] <= 57))             //check if str element is a digit
                {
                    if((str[i]!= str[i+1]) && (str[i] != str[i+2]) && (str[i] != str[i+3]))
@@ -89,18 +78,14 @@ int main(){
                   chances++;
                     }
                }
-
         else
         {
-
             chances = chances;      //otherwise chances does not change
         }
 
             }
 
               return chances;
-
-
         }
 
     int extractDigits (char str[MAX], int digitsInInputString [MAX])
@@ -108,28 +93,21 @@ int main(){
 
     int j = 0;
     int digitCount = 0;
-
+     
         for (int i= 0; i < strlen(str);++i)          //loop through str length of str times
             {
              if((str[i] >= 48) && (str[i] <= 57))       //check if element is a integer using ASCII values
             {
-
         digitsInInputString[j] = str[i];            //store element in digitsInInputString
         j = j + 1;                                  // add one to j everytime
         digitCount++;                               //add one to digitCount
         }
-
-
             }
-
-
     return digitCount;
         }
 
      int checkPlayerMove (int playersGuess, int digitsInInputString [MAX], int totalDigits)
      {
-
-
         for (int i = 0; i < totalDigits; ++i){                              //loop through totalDigits times
 
                 if  (playersGuess == digitsInInputString[i])
@@ -142,20 +120,11 @@ int main(){
 
 
             return 0;                                             //if guess is wrong return 0
-
         }
-
-
       }
      }
-
-
-
-
   void updateDigits (int playersGuess, int remainingDigits [MAXD])
    {
-
-
        for (int i = 0; i < MAXD; ++i)
        {
 
@@ -163,62 +132,41 @@ int main(){
           {                                          //if playersGuess is equal to element in currentDigits then replace element with -1
             remainingDigits[i] = -1;
           }
-
-
        }
-
    }
 
     void displayDigits (int remainingDigits [MAXD])
     {
-
     for (int i = 0; i < MAXD; ++i)
           {
-
             if (remainingDigits[i] != -1)
             {                               //if element in remaining digits is not equal to -1 then print integer
 
                     printf("%d ", remainingDigits[i]);
-
             }
-
             else
             {
-
                 printf(" ");
             }
-
-
           }
     }
-
     void displayXs(char exes[MAX], int totalDigits)
     {
-
         for (int i = 0; i < totalDigits; i++)
         {
-
             exes[i] = 'X';
             printf("%c ", exes[i]);                //loop through totalDigits and set every element in exes[i] equal to X
         }
-
-
-
     }
 
      int countXs (char exes [MAX], int totalDigits)
      {
          int numberExes = 0;
-
-
      for (int i=0; i < totalDigits; ++i)
      {                                     //loop through totalDigits and for every element equal to X add one to numberExes
-
         if (exes[i] == 'X')
         {
             numberExes++;
-
         }
      }
-
         return numberExes;              //return numberExes
